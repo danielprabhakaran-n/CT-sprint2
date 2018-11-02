@@ -1,0 +1,368 @@
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/lenders">Lenders</a></li>
+        <li class="active">Lender Name</li>
+    </ul>
+    <script type="text/ng-template" id="deleteLender.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.heading.delete' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <api-validate></api-validate>
+            <br>
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="deletesig.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.button.deletesig' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <api-validate></api-validate>
+            <span ng-show="docId == -1">{{'label.noLenderSignature' | translate}}</span> <br> <br>
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-show="docId != -1" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="photo-dialog.html">
+        <div class="modal-header silver">
+            <img ng-src="{{largeImage}}" alt="Avatar">
+        </div>
+        <div class="modal-body ">
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="lenderSignature.html">
+        <div class="modal-header silver">
+            <img ng-src="{{largeImage}}" alt="Signature">
+        </div>
+        <div class="modal-body ">
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-danger" ng-click="deleteSig()" has-permission='DELETE_lenderIMAGE'><i class="fa fa-trash-o" aria-hidden="true"></i>{{'label.button.delete' | translate}}</button>
+            <button class="btn btn-primary" ng-click="uploadSig()" has-permission='CREATE_lenderIMAGE'><i class="fa fa-upload" aria-hidden="true"></i>{{'label.button.upload' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="lenderWithoutSignature.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.nolenderSignature' | translate}}</h3>
+        </div>
+        <div class="modal-body ">
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-click="uploadSig()" has-permission='CREATE_lenderIMAGE'><i class="fa fa-upload" aria-hidden="true"></i>{{'label.button.upload' | translate}}</button>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="uploadpic.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.heading.selectlenderimage' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <api-validate></api-validate>
+            <br>
+            <input type="file" ngf-select ng-model="file">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-click="upload(file)">{{'label.button.upload' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="capturepic.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.heading.capturelenderimage' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <api-validate></api-validate>
+            <div ng-show="error != null" class="error">
+                {{'label.error' | translate}}: {{error}}
+            </div>
+            <br>
+            <div>
+                <div class="left">
+                    <webcam on-streaming="onVideoSuccess()"
+                            on-error="onVideoError(err)" on-stream="onStream(stream)" channel="videoChannel"></webcam>
+                </div>
+                <div class="right">
+                    <canvas id="lenderSnapshot" width="320" height="240"></canvas>
+                </div>
+            </div>
+            <div class="center" style="margin-top: 10px">
+                <button class="btn btn-warning" ng-click="takeScreenshot()">
+                    <i class="fa fa-camera "></i>
+                    {{'label.button.capture' | translate}}
+                </button>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-click="uploadscreenshot()">{{'label.button.upload' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="deletePic.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.heading.deletelenderimage' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <api-validate></api-validate>
+            <br>
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-click="delete()">{{'label.button.confirm' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="lenderunassignstaff.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.heading.unassignstaff' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <api-validate></api-validate>
+            <br>
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-click="unassign()">{{'label.button.confirm' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="uploadsig.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.heading.selectlendersignature' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <api-validate></api-validate>
+            <br>
+            <input type="file" ngf-select ng-model="file">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+            <button class="btn btn-primary" ng-click="upload(file)">{{'label.button.upload' | translate}}</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="deleteNote.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.heading.delete' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <p>{{'label.areyousure' | translate}}</p>
+        </div>
+        <div class="modal-footer">
+			<span class="pull-right">
+				<button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+				<button class="btn btn-primary" ng-click="deleteNote(lender.id,lenderNote.id,$index)">{{'label.button.confirm' | translate}}</button>
+			</span>
+        </div>
+    </script>
+    <script type="text/ng-template" id="editNote.html">
+        <div class="modal-header silver">
+            <h3 class="bolder">{{'label.edit' | translate}}</h3>
+        </div>
+        <div class="modal-body">
+            <textarea rows="1" class="form-control marginbottom0px" id="textarea" placeholder="{{'label.input.enternote' | translate}}" ng-model="this.editData.editNote">  </textarea>
+        </div>
+        <div class="modal-footer">
+			<span class="pull-right">
+				<button class="btn btn-warning" ng-click="cancel()">{{'label.button.cancel' | translate}}</button>
+				<button class="btn btn-primary" ng-click="editNote(lender.id,lenderNote.id,$index)">{{'label.button.confirm' | translate}}</button>
+			</span>
+        </div>
+    </script>
+    <div class="card">
+        <div class="content">
+            <div class="toolbar">
+                <h3 class="lender-title">
+                    <i class="fa fa-circle {{lender.status.code | StatusLookup}}" uib-tooltip="{{lender.status.value}}" uib-tooltip-placement="top"></i>
+                    <small ng-if="lender.subStatus.description">
+                        [{{lender.subStatus.description}}]
+                    </small>
+                    <strong> Lender ID : 000111222 </strong>
+                    <small>
+                            SBI
+                    </small>
+                </h3>
+            </div>
+            <uib-tabset class="scrollable" tabset-name="lenderTabset" scrollable persistent-tab>
+                <uib-tab heading="Details">
+                    <div class="btn-group row pull-right">
+                        <!-- <button type="button" class="btn btn-primary"><i
+                                class="fa fa-trash-o "></i>{{"label.button.delete"
+                            | translate}}
+                        </button> -->
+                        <a href="#/editlender" class="btn btn-primary pull-right"><i
+                            class="fa fa-edit"></i> Edit</a>
+                        <a href="#/activatelender" class="btn btn-primary btn-offset"><i
+                                class="fa fa-edit "></i> Activate
+                        </a>
+                        <a href="#/closelender" class="btn btn-primary btn-offset"><i
+                                class="fa fa-star "></i> Close
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="">
+                                <table class="table-minified" width="100%">
+                                    <tr>
+                                        <th class="table-bold">{{ 'label.input.lenderid' | translate }}</th>
+                                        <td>
+                                            <span class="padded-td">00000001</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">{{ 'label.input.lendername' | translate }}</th>
+                                        <td colspan="3"><span class="padded-td">SBI</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">{{ 'label.input.lendertype' | translate }}</th>
+                                        <td>
+                                            <span class="padded-td">BANK</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">{{ 'label.input.pan' | translate }}</th>
+                                        <td><span class="padded-td">CPXU082154</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">{{ 'label.input.gstin' | translate }}</th>
+                                        <td><span class="padded-td">22BBBBB0000A1Z5</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">{{ 'label.input.gstIncluded' | translate }}</th>
+                                        <td><span class="padded-td">Yes</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">{{'Active' }}</th>
+                                        <td><span class="padded-td">No</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">{{ 'label.input.submittedDate' | translate }}</th>
+                                        <td><span class="padded-td">{{lender.timeline.activatedOnDate | DateFormat}}
+                                            <span>22 Sep 2018</span>
+                                        </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th class="table-bold">Activated Date</th>
+                                        <td><span class="padded-td">{{lender.timeline.activatedOnDate | DateFormat}}<span >{{ 'label.notactivated' | translate }}</span></span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Schemes">
+                    <div>
+                        <a href="#/addlenderscheme"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i> Add Scheme</button></a>
+                        <br>
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr class="graybg">
+                                    <!-- <th >Scheme</th> -->
+                                <th >Lender</th>
+                                <th >Product Id</th>
+                                <th >Service Model</th>
+                                <th >Recovery support period (DPA)</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                        <!-- <td><a href="#/viewlenderscheme">Scheme 1</a></td> -->
+                                    <td><a href="#/viewlenderscheme">SBI</a></td>
+                                    <td><a href="#/viewlenderscheme">Business Loan</a></td>
+                                    <td><a href="#/viewlenderscheme">FLDG</a></td>
+                                    <td><a href="#/viewlenderscheme">30</a></td>
+                                </tr>
+                                <tr>
+                                        <!-- <td><a href="#/viewlenderscheme">Scheme 2</a></td> -->
+                                        <td><a href="#/viewlenderscheme">Indian Bank</a></td>
+                                        <td><a href="#/viewlenderscheme">BILCT</a></td>
+                                        <td><a href="#/viewlenderscheme">PRS</a></td>
+                                        <td><a href="#/viewlenderscheme">50</a></td>
+                                    </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </uib-tab>
+                <uib-tab heading="Accounts" >
+                    <div >
+                        <a href="#/addlenderaccount"><button class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add Account</button></a>
+                        <table class="table" class="table table-condensed">
+                            <thead>
+                            <tr class="graybg">
+                                <th >Bank ID</th>
+                                <th >Bank Name</th>
+                                <th >Bank IFSC Code</th>
+                                <th >Bank Account Type</th>
+                                <th >Bank Account Number</th>
+                                <th >Bank Payment Method</a></th>
+                                <!-- <th >Bank Account Usage</a></th> -->
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr >
+                                <td><a href="#/viewlenderaccount">000001</a></td>
+                                <td><a href="#/viewlenderaccount">IND Bank</a></td>
+                                <td><a href="#/viewlenderaccount">IDIB000C20</a></td>
+                                <td><a href="#/viewlenderaccount">CA</a></td>
+                                <td><a href="#/viewlenderaccount">6021330455</a></td>
+                                <td><a href="#/viewlenderaccount">NEFT</a></td>
+                                <!-- <td><a href="#/viewlenderaccount">Funding</a></td> -->
+
+                            </tr >
+                            <tr >
+                                <td><a href="#/viewlenderaccount">000002</a></td>
+                                <td><a href="#/viewlenderaccount">YES Bank</a></td>
+                                <td><a href="#/viewlenderaccount">YES000C20</a></td>
+                                <td><a href="#/viewlenderaccount">SB</a></td>
+                                <td><a href="#/viewlenderaccount">6021330466</a></td>
+                                <td><a href="#/viewlenderaccount">IMPS</a></td>
+                                <!-- <td><a href="#/viewlenderaccount">Collection</a></td> -->
+                                </tr >
+                            </tbody>
+                        </table>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Contacts" >
+                    <div >
+                        <a href="#/addlendercontacts"><button class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add Contact</button></a>
+                        <br>
+                        <table class="table" class="table table-condensed">
+                            <thead>
+                            <tr class="graybg" >
+                                <th >Contact ID</th>
+                                <th >Contact Name</th>
+                                <th >Contact Designation</th>
+                                <th >Contact Email ID</th>
+                                <th >Contact Phone Number</th>
+                                <th >Contact Type</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr >
+                                <td><a href="#/viewlendercontacts">123456</a></td>
+                                <td><a href="#/viewlendercontacts">Rajendran</a></td>
+                                <td><a href="#/viewlendercontacts">Cash Management Officer</a></td>
+                                <td><a href="#/viewlendercontacts">abcdefg@gmail.com</a></td>
+                                <td><a href="#/viewlendercontacts">9089786756</a></td>
+                                <td><a href="#/viewlendercontacts">FUNDS</a></td>
+                            </tr>
+                            <tr >
+                                <td><a href="#/viewlendercontacts">357644</a></td>
+                                <td><a href="#/viewlendercontacts">sam</a></td>
+                                <td><a href="#/viewlendercontacts">Commercial Loan Manager</a></td>
+                                <td><a href="#/viewlendercontacts">shgf@example.com</a></td>
+                                <td><a href="#/viewlendercontacts">8946473327</a></td>
+                                <td><a href="#/viewlendercontacts">Recovery</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+    </div>
+</div>

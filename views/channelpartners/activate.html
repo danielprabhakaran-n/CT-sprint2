@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/channelpartners">Channel Partners</a></li>
+        <li><a href="#/viewchannelpartner">View Channel Partner</a></li>
+        <li class="active">Active</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Active">
+            <div class="card-content">
+                <form name="addbankdetails" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Activated Date </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="activedate" ng-model="activedate" class="form-control" datepicker-pop="dd MMMM yyyy" is-open="opened2" min="" max="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

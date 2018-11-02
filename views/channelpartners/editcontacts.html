@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/channelpartners">Channel Partners</a></li>
+        <li><a href="#/viewchannelpartner/">View Channel Partner</a></li>
+        <li class="active"> Edit - Contact Details</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit Contact Details">
+            <div class="card-content">
+                <form name="editchannelcontact" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Contact ID <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="contactid" value="112233" class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Contact Name <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contactname" value="Rajendren" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Contact Designation <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contactdesignation" value="Field officer"class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Contact Email ID <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contactemailid" value="abc@bank.com" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Contact Phone Number <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contactphone" value="8897656472" class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Contact Type</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contacttype" value="Fund" class="form-control">
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

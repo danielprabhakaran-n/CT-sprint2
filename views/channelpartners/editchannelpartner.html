@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/channelpartners">Channel Partners</a></li>
+        <li class="active">Edit - Channel Partner</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit Channel Partner">
+            <div class="card-content">
+                <form name="editchannelpartner" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Channel Partner Id <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="cpId" value="000001" class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Channel Partner Name<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="dsaname" value="Anil Pillai & CO" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Source System</label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="">Lender</option>
+                                    
+                                </select>
+                                </div>
+                            <label class="control-label col-sm-2" for="sysid">Source System Id</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="sysid" value="000001" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Start Date<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" name="startdate" placeholder="12 Sep 2018" ng-model="satrtdate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate" />
+                            </div>
+                            <label class="control-label col-sm-2">End Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control" value="12 Mar 2019" name="enddate" placeholder="22 September 2018" ng-model="enddate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="address">Address</label>
+                            <div class="col-sm-3">
+                                <textarea row="3" cols="10" class="form-control"/>
+                            </div>
+                            <label class="control-label col-sm-2">{{'label.input.pan' | translate}}<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="pan" value="CPX2345XXXX" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">GSTIN<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="gstin" value="22BBBBB0000A1Z6" class="form-control"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

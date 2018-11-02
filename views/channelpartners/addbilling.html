@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/channelpartners">Channel Partners</a></li>
+        <li><a href="#/viewchannelpartner">View Channel Partner</a></li>
+        <li class="active">Add - Billing</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Add Bank Details">
+            <div class="card-content">
+                <form name="addbankdetails" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Product Id </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="productid" class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Billing Cycle</label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option>Daily</option>
+                                    <option>Monthly</option>
+                                    <option>Yearly</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">From Date <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="billingcycletodate" class="form-control" ng-model="billingcycletodate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate">
+                            </div>
+                            <label class="control-label col-sm-2">To Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="billingcycletodate" class="form-control" ng-model="toodate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Min Volume <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="minvolume" class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Max Volume <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="maxvolume" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Commission Share</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="commisionshare" class="form-control"/>
+                            </div>
+                            <label class="control-label col-sm-2">Flat Incentive</label>
+                            <div class="col-sm-3">
+                                <input  type="text" name="flatincentive" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

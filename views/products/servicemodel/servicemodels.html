@@ -1,0 +1,55 @@
+<div class="content-container" ng-controller="LoanProductController">
+    <ul class="breadcrumb">
+        <li><a href="#/products">{{'label.anchor.products' | translate}}</a></li>
+        <li class="active">{{'label.anchor.servicemodels' | translate}}</li>
+    </ul>
+
+    <div class="card well">
+        <div class="row">
+            <div class="col-m-9 col-sm-9">
+                <input ng-autofocus="true" ng-model="filterText" type="text" ng-keyup="onFilter()" class="form-control" placeholder="{{'label.input.filterbynameshortname' | translate}}">
+            </div>
+            <div class="col-m-3 col-sm-3">
+                <a href="#/createloanservicemodel" class="btn btn-primary pull-right"><i class="fa fa-plus "></i> Create Loan Service Model</a>
+            </div>
+        </div>
+        <hr>
+        <table class="table">
+            <thead>
+            <tr class="graybg">
+                <!-- <th>Service Model Id</th> -->
+                <th>Loan product</th>
+                <th>Funding model</th>
+                <th>Repayment Model</th>
+                <th>Back Office Processing</th>
+                <th>Risk sharing  Model</th>
+                <th>Risk Sharing type</th>
+                <th>Recovery support</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="">
+                <!-- <td class="pointer" ><a href="#/viewloanservicemodel">000001</a></td> -->
+                <td class="pointer" ><a href="#/viewloanservicemodel">Business Loan</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">EXT</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">EXT</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">OUTSOURCE</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">SYNDICATE</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">Migration</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">SOFT</a></td>
+            </tr>
+            <tr class="">
+                <!-- <td class="pointer" ><a href="#/viewloanservicemodel">000002</a></td> -->
+                <td class="pointer" ><a href="#/viewloanservicemodel">BILCT</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">EXT</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">EXT</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">OUTSOURCE</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">SYNDICATE</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">Migration</a></td>
+                <td class="pointer" ><a href="#/viewloanservicemodel">SOFT</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <dir-pagination-controls boundary-links="true" template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+    </div>
+</div>

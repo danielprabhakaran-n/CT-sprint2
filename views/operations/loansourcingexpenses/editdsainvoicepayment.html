@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/viewdsainvoice">View DSA Invoice</a></li>
+        <li class="active">Edit - DSA Invoice </li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit DSA Invoice">
+            <div class="card-content">
+                <form name="createfldgform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <legend></legend>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                DSA <span class="required"></span>
+                            </label>
+                            <div class="col-sm-3">
+                                <input type="text" name="trancheid"value="23654" class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Product <span class="required"></span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="trancheid"value="SB" class="form-control">
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Date <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <input id="activateddate" ng-model="activateddate" type="text" name="activateddate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate" placeholder="2 september 2018" class="form-control"/>
+                            </div>
+                            <label class="control-label col-sm-2">Total Loan Turnover <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename"value="200,000" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="trancheloanlimit">Total commission <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="trancheloanlimit"value="50,000" placeholder=" " class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2" for="mobileNo">GST <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename" value="10,000"placeholder="" class="form-control">
+                            </div>
+
+                        </div>
+                        
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">Cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

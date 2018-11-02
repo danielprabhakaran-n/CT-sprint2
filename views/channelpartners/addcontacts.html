@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/channelpartners">Channel Partners</a></li>
+        <li><a href="#/viewchannelpartner/">View Channel Partner</a></li>
+        <li class="active"> Add - Contact Details</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Add Contact Details">
+            <div class="card-content">
+                <form name="createlenderform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Contact ID <span class="required">*</span> </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="contactid" class="form-control" required="">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Contact Name<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contactname" class="form-control" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Contact Designation<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="Designation" class="form-control" required>
+                            </div>
+                            <label class="control-label col-sm-2">Contact Email ID<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contactemailid" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Contact Phone Number <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="contactphone" class="form-control" required>
+                            </div>
+                            <label class="control-label col-sm-2">Contact Type</label>
+                            <div class="col-sm-3">
+                                    <select class="form-control">
+                                        <option>Funds</option>
+                                        <option>Recovery</option>
+                                    </select>
+                                </div>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">Cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

@@ -1,0 +1,273 @@
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/fldg">Tranche</a></li>
+        <li class="active">Tranche Name</li>
+    </ul>
+    <div class="card">
+        <div class="content">
+            <div class="toolbar">
+                <h3 class="lender-title">
+                    <strong> Tranche Name </strong>
+                    <small>
+                        Tranche ID : 000111222
+                    </small>
+                </h3>
+            </div>
+            <uib-tabset class="scrollable" tabset-name="lenderTabset" scrollable persistent-tab>
+                <uib-tab heading="FLDG">
+                    <div class="btn-group row pull-right">
+                    <a href="#/activatefldg" class="btn btn-primary pull-right">
+                        <i class="fa fa-check"></i> Activate</a>
+                    <a href="#/closefldg" class="btn btn-primary pull-right"><i
+                            ></i> Close</a>
+                    <a href="#/editfldg" class="btn btn-primary pull-right"><i
+                                    class="fa fa-edit"></i> Edit</a>
+                    <a href="#" class="btn btn-primary pull-right"><i
+                                    class="fa fa-trash-o "></i> Delete</a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- <table class="table" class="table table-condensed">
+                                <thead>
+                                <tr class="graybg">
+                                    <!-- <th >FLDG Details</th>
+                                    <th >Lender Id</th>
+                                    <th >Tranche Id</th>
+                                    <th >Tranche Name</th>
+                                    <th >Tranche Loan Limit </th>
+                                    <th >Tranche Risk Cover </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>000111222</td>
+                                    <td>000222111</td>
+                                    <td>Batch1</td>
+                                    <td>3 months</td>
+                                    <td>2 %</td>
+
+                                </tr>
+                                </tbody>
+                            </table> -->
+
+                            <table class="table">
+                                <tr>
+                                    <th width="300px" class="table-bold">Lender Id </th>
+                                    <td ><span class="padded-td">Indian Bank</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Scheme Id</th>
+                                    <td><span class="padded-td">Scheme 1</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Tranche Id</th>
+                                    <td>
+                                        <span class="padded-td">000222111</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Tranche Name</th>
+                                    <td>
+                                        <span class="padded-td">Tranche 1</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Tranche Loan Limit</th>
+                                    <td>
+                                        <span class="padded-td">1,000,000 </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Tranche Risk cover %</th>
+                                    <td>
+                                        <span class="padded-td">50%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Tranche Risk cover Limit</th>
+                                    <td>
+                                        <span class="padded-td">5,000,000 </span>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <th class="table-bold">Margin Money %</th>
+                                    <td>
+                                        <span class="padded-td">25%</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                        <th class="table-bold">Margin Money Available</th>
+                                        <td>
+                                            <span class="padded-td">5,000,000</span>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <th class="table-bold">Tranche Loan Available</th>
+                                    <td>
+                                        <span class="padded-td">2,500,000 </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Tranche Risk cover Available</th>
+                                    <td>
+                                        <span class="padded-td">4,000,000 </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Active</th>
+                                    <td>
+                                        <span class="padded-td">YES</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Submitted Date</th>
+                                    <td>
+                                        <span class="padded-td">4 August 2018</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="table-bold">Activated Date</th>
+                                    <td>
+                                        <span class="padded-td">4 September 2018</span>
+                                    </td>
+                                </tr>
+                                
+                            </table>
+    
+                        </div>
+                    </div>
+                </uib-tab>
+                <uib-tab heading="Revenue Share ">
+                    <div>
+                        <a href="#/addrevenueshare"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i> Add Revenue Share </button></a>
+                        <br>
+                        <table class="table" class="table table-condensed">
+                            <thead>
+                                <tr class="graybg">
+                                    <th >Tranche ID</th>
+                                    <th >Start Date</th>
+                                    <th >End Date</th>
+                                    <th >Billing Frequency</th>
+                                    <th >Min Volume</th>
+                                    <th >Max Volume </th>
+                                    <th >Base Rate </th>
+                                    <th >Cap Rate </th>
+                                    <th >Loan Issue amount Share %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#/viewrevenueshare">000001</a></td>
+                                    <td><a href="#/viewrevenueshare">12 May 2018</a></td>
+                                    <td><a href="#/viewrevenueshare">22 May 2019</a></td>
+                                    <td><a href="#/viewrevenueshare">Quartely</a></td>
+                                    <td><a href="#/viewrevenueshare">1,00,000 </a></td>
+                                    <td><a href="#/viewrevenueshare">10,00,000 </a></td>
+                                    <td><a href="#/viewrevenueshare">12</a></td>
+                                    <td><a href="#/viewrevenueshare">18</a></td>
+                                    <td><a href="#/viewrevenueshare">2</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#/viewrevenueshare">000002</a></td>
+                                    <td><a href="#/viewrevenueshare">12 May 2018</a></td>
+                                    <td><a href="#/viewrevenueshare">22 May 2019</a></td>
+                                    <td><a href="#/viewrevenueshare">Quartely</a></td>
+                                    <td><a href="#/viewrevenueshare">10,00,001 </a></td>
+                                    <td><a href="#/viewrevenueshare">1,00,00,000 </a></td>
+                                    <td><a href="#/viewrevenueshare">12</a></td>
+                                    <td><a href="#/viewrevenueshare">20</a></td>
+                                    <td><a href="#/viewrevenueshare">4</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </uib-tab>
+
+                <uib-tab heading="Margin Deposits ">
+                        <div>
+                            <a href="#/margindeposit"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i> Add Margin Deposit </button></a>
+                            <br>
+                            <table class="table" class="table table-condensed">
+                                <thead>
+                                    <tr class="graybg">
+                                        <th >Margin Deposit Id</th>
+                                        <th >Lender Id</a></th>
+                                        <th >Tranche Id</a></th> 
+                                        <th >Deposit Amount</a></th>
+                                        <th >Start Date</a></th>
+                                        <th >Due Date</a></th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><a href="#/viewmargindeposit">000001</a></td>
+                                        <td><a href="#/viewmargindeposit">SBI</a></td>
+                                        <td><a href="#/viewmargindeposit">000001</a></td> 
+                                        <td><a href="#/viewmargindeposit">1,00,000</a></td>
+                                        <td><a href="#/viewmargindeposit">12 Sep 2018</a></td>
+                                        <td><a href="#/viewmargindeposit">12 Mar 2019</a></td>
+                                        
+                                    </tr>
+                                    <tr>
+                                        <td><a href="#/viewmargindeposit">000002</a></td>
+                                        <td><a href="#/viewmargindeposit">SBI</a></td>
+                                        <td><a href="#/viewmargindeposit">000001</a></td> 
+                                        <td><a href="#/viewmargindeposit">2,00,000 </a></td>
+                                        <td><a href="#/viewmargindeposit">23 Sep 2018</a></td>
+                                        <td><a href="#/viewmargindeposit">25 Mar 2018</a></td>
+                                        </tr>
+                                </tbody>
+                            </table>
+    
+                        </div>
+    
+                    </uib-tab>
+
+                    <uib-tab heading="Claims ">
+                        <div>
+                            <!-- <a href="#"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-tag"></i> Add Claim </button></a>
+                            <br> -->
+                            <table class="table" class="table table-condensed">
+                                <thead>
+                                    <tr class="graybg">
+                                        <th >Amount</th>
+                                        <th >Transaction Date</a></th>
+                                        <th >Transaction Type</a></th> 
+                                        <th >Payment Type</a></th>
+                                        <th >Value Date</a></th>
+                                        <th >Bank Txn Id</a></th>
+                                        <th >Bank Code</a></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1,00,000</td>
+                                        <td>01 Oct 2018</td>
+                                        <td>Loan Claim</td> 
+                                        <td>NEFT</td>
+                                        <td>01 Oct 2018</td>
+                                        <td>827414012788</td>
+                                        <td>YESB0000251</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2,00,000</td>
+                                        <td>29 Sep 2018</td>
+                                        <td>Loan Claim</td> 
+                                        <td>NEFT</td>
+                                        <td>29 Sep 2018</td>
+                                        <td>827414012345</td>
+                                        <td>YESB0000251</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+    </div>
+</div>

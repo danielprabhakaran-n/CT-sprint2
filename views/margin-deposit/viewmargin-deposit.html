@@ -1,0 +1,123 @@
+<div class="content-container">
+        <ul class="breadcrumb">
+                <!-- <li><a href="#/viewmargindeposit">Tranche</a></li> -->
+                <li><a href="#/viewfldg">view tranche</a></li>
+                <li class="active">view - Margin Deposit </li>
+            </ul>
+    <div class="card">
+        <div class="content">
+            <div class="toolbar">
+                <h4 class="lender-title">
+                    View Margin Deposit
+                </h4>
+            </div>
+            <table class="table" class="table table-condensed">
+                <thead>
+                <tr class="graybg">
+                    <th class="graybg">Margin Deposit</th>
+                    <td>
+                        <a href="#/editmargindeposit"><button class="btn btn-primary pull-right"><i class="fa fa-edit"></i> {{'label.button.edit' | translate}}</button></a>
+                        <a href="#/interestpayment"><button class="btn btn-primary pull-right"><i class="fa fa-credit-card"></i> {{'Interest Payment'}}</button></a>
+                        <a href="#/loanclaim"><button class="btn btn-primary pull-right"><i class="fa fa-money"></i> {{'Loan claim withdrawal'}}</button></a>
+                        <a href="#/close"><button class="btn btn-primary pull-right"><i class="fa fa-times"></i> {{'Closure'}}</button></a>
+                    </td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th >
+                        Margin Deposit Id
+                    </th>
+                    <td>000001</td>
+                </tr>
+                 <tr>
+                    <th>
+                        Lender Id
+                    </th>
+                    <td>SBI</td>
+                </tr>
+                <tr>
+                    <th >
+                        Tranche Id
+                    </th>
+                    <td>000001</td>
+                </tr>
+                <tr>
+                    <th >
+                        Deposit Amount
+                    </th>
+                    <td>1,00,000</td>
+                </tr>
+                <tr>
+                    <th >
+                        Start Date
+                    </th>
+                    <td>12 Sep 2018</td>
+                </tr>
+                <tr>
+                    <th >
+                        Due Date
+                    </th>
+                    <td>12 Mar 2019</td>
+                </tr>
+                <tr>
+                    <th >
+                        Interest Rate
+                    </th>
+                    <td>
+                        8 %
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Available Amount
+                    </th>
+                    <td>1,00,000</td>
+                </tr>
+                <tr>
+                    <th >
+                        Transaction Date
+                    </th>
+                    <td>12 Sep 2018</td>
+                </tr>
+                <tr>
+                    <th >
+                        Bank Ref No.
+                    </th>
+                    <td>00001234556</td>
+                </tr>
+                <tr>
+                    <th >
+                        Margin Type
+                    </th>
+                    <td>Deposit</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <uib-tabset class = "scrollable" tabset-name="loanAccountDetails" scrollable>
+            <uib-tab heading="{{'label.heading.accountdetail' | translate}}">
+                <!-- <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th class="empty"></th>
+                        <th class="empty"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Source System</td>
+                        <td><span class="padded-td">Bank</span></td>
+                    </tr>
+                    </tbody>
+                </table> -->
+            </uib-tab>
+
+            <uib-tab heading="{{'repayment'}}">
+
+            </uib-tab>
+        </uib-tabset>
+        
+    </div>
+</div>

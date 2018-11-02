@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/dlod">DLOD Entry of Month-End Balance Summary</a></li>
+        <li class="active">Create - DLOD Entry of Month-End Balance Summary </li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Create - DLOD Entry of Month-End Balance Summary">
+            <div class="card-content">
+                <form name="createfldgform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <legend></legend>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Bank Code <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <input type="text" name="trancheid"  class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Bank Txn Id <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="trancheid"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Lender ID <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                <option value="">SBI</option>
+                                <option value="">RBL</option>
+                                <option value="">YES</option>
+                                <option value="">IND</option>
+                                </select>
+                            </div>
+                            <label class="control-label col-sm-2">Remitter <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename"  class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="trancheloanlimit">Source Loan ID </label>
+                            <div class="col-sm-3">
+                                <input type="text" name="trancheloanlimit"  placeholder=" " class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2" for="mobileNo">Reporting Month <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename"  placeholder="" class="form-control">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Month Opening Balance <span class="required">*</span> </label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchelimit" placeholder="" class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Month Closing Balance <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="marginmoney"   placeholder="" class="form-control">
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="mobileNo"> Interest amount Charged <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename" value="" placeholder="" class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Interest Charged Date <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input id="submitteddate" ng-model="submiteddate" type="text" name="submitteddate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened1" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">Other Fees charged <span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="tranchename" value="" placeholder="" class="form-control">
+                                </div>
+                            <label class="control-label col-sm-2">Other fees Date <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input id="activateddate" ng-model="activateddate" type="text" name="activateddate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Charges / Fees serviced amount till Billing cycle <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename" value="" placeholder="" class="form-control">
+                            </div>
+                        <label class="control-label col-sm-2">Charged / Fees service date <span class="required">*</span></label>
+                        <div class="col-sm-3">
+                            <input id="activateddate" ng-model="activateddate" type="text" name="activateddate" datepicker-pop="dd MMMM yyyy"
+                                   is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Closed Date</label>
+                            <div class="col-sm-3">
+                                <input id="submitteddate" ng-model="submiteddate" type="text" name="submitteddate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened1" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                        
+                        </div>
+                        
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">Cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

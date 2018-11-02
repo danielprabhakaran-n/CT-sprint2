@@ -1,0 +1,118 @@
+<div class="content-container" ng-init="lenderFilter = false">
+    <ul class="breadcrumb">
+        <li><a href="#/loansourcing">Loan Sourcing Expenses</a></li>
+        <li class="active">DSA Month-End Commission</li>
+    </ul>
+    <api-validate></api-validate>
+
+    <div class="card">
+        <div class="toolbar">
+            <h4>List of DSA Month-End Commission</h4>
+        </div>
+        <div class="content">
+            <br>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <form ng-submit="search()" class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input ng-autofocus="true" ng-model="filterText" ng-keyup="onFilter()" type="text"
+                                       class="form-control unstyled"
+                                       placeholder="Search by DSA Name,  Disbursal Amount">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary form-control" uib-tooltip="Search">
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="" class="btn btn-primary rs-btn" uib-tooltip="Filter" ng-click="lenderFilter = !lenderFilter"><i
+                                        class="fa fa-filter"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#/createbadloanclaims" class="btn btn-primary pull-right"><i
+                            class="fa fa-download"></i> Download</a> &nbsp;&nbsp;
+                </div>
+            </div>
+            <hr/>
+            <div ng-if="lenderFilter" uib-collapse="isCollapsed" class="blockoverlay">
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="Dibursal Amount Range" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="DSA Name" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" placeholder=" Payout % Range" class="form-control"/>
+                                </div>
+                            </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input id="submitteddate" type="text" name="submitteddate" ng-model="submitteddate" datepicker-pop="dd MMMM yyyy"
+                                               is-open="opened1" min="minDate" max="restrictDate" placeholder="Date Range" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Advance Search Button -->
+                <span><a ng-click="advancesearch(1)" class="btn btn-primary bottomspacing"><i class="icon-search icon-white"></i> {{'label.button.advancesearch'
+                                | translate}}</a>
+                    </span>
+                <!-- Reset Button -->
+                <span>
+                        <a ng-click="resetSearch()" class="btn btn-primary bottomspacing"> Reset</a>
+                    </span>
+                <hr/>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Particulars</th>
+                        <th>Disbursal Amount</th>
+                        <th>Payout %</th>
+                        <th>Final Payout</th>
+                        <th>GST</th>
+                        <th>Grand Total</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr >
+                        <td><a href="#/viewdsamonthend">Business Loan</a></td>
+                        <td><a href="#/viewdsamonthend">10,00,000</a></td>
+                        <td><a href="#/viewdsamonthend">10</a></td>
+                        <td><a href="#/viewdsamonthend">1,00,000</a></td>
+                        <td><a href="#/viewdsamonthend">1,000</a></td>
+                        <td><a href="#/viewdsamonthend">1,01,000</a></td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <dir-pagination-controls align="center" boundary-links="true"
+                                     template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"
+                                     on-page-change="getResultsPage(newPageNumber)">
+            </dir-pagination-controls>
+
+        </div>
+    </div>
+
+
+</div>

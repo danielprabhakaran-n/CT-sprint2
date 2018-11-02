@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/chennelpartner">Channel Partner</a></li>
+        <li><a href="#/viewchannelpartner">View Channel Partner</a></li>
+        <li class="active">Edit - Billing</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit Billing">
+            <div class="card-content">
+                <form name="editbankdetails" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Product Id </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="productid" value="Business Loan" class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Billing Cycle</label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option>Monthly</option>
+                                    <option>Daily</option>
+                                    <option>Yearly</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">From date <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="string" name="billingcycletodate" placeholder="07 Jun 2018" class="form-control" ng-model="fromdate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate">
+                            </div>
+                            <label class="control-label col-sm-2">To date</label>
+                            <div class="col-sm-3">
+                                <input type="string" name="billingcycletodate" placeholder="07 Jun 2022" class="form-control" ng-model="todate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Min Volume <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="minvolume" value="1,00,000 " class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Max Volume <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="maxvolume" value="10,00,000" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Commission Share</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="commisionshare" value="5%" class="form-control"/>
+                            </div>
+                            <label class="control-label col-sm-2">Flat Incentive</label>
+                            <div class="col-sm-3">
+                                <input  type="text" name="flatincentive" value="10,000" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

@@ -1,0 +1,122 @@
+<div class="content-container" ng-init="filter = false">
+    <ul class="breadcrumb">
+        <li class="active">Download Tally Accounting Excel</li>
+    </ul>
+    <api-validate></api-validate>
+
+    <div class="card">
+        <div class="toolbar">
+            <h4>List of Download Tally Accounting Excel</h4>
+        </div>
+        <div class="content">
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <form ng-submit="search()" class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-4">
+                                <input ng-model="filterText" ng-keyup="onFilter()" type="text"
+                                       class="form-control unstyled" datepicker-pop="dd MMMM yyyy"
+                                       placeholder="From Date">
+                            </div>
+                            <div class="col-md-4">
+                                <input ng-model="filterText" ng-keyup="onFilter()" type="text"
+                                        class="form-control unstyled" datepicker-pop="dd MMMM yyyy"
+                                        placeholder="To Date">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" uib-tooltip="Search">
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <!-- <a href="" class="btn btn-primary rs-btn" uib-tooltip="Filter" ng-click="filter = !filter"><i
+                                        class="fa fa-filter"></i></a> -->
+                                        <a class="btn btn-primary bottomspacing"> Download </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr/>
+            <div ng-if="filter" uib-collapse="isCollapsed" class="blockoverlay">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="From Date" ng-model="fromdate" datepicker-pop="dd MMMM yyyy" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="To Date" ng-model="todate" datepicker-pop="dd MMMM yyyy" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <!-- Advance Search Button -->
+                <span><a ng-click="advancesearch(1)" class="btn btn-primary bottomspacing"><i class="icon-search icon-white"></i> {{'label.button.advancesearch'
+                                | translate}}</a>
+                    </span>
+                <!-- Reset Button -->
+                <span>
+                        <a ng-click="resetSearch()" class="btn btn-primary bottomspacing"> Reset </a>
+                    </span>
+                <hr/>
+            </div>
+            <!-- <div class="text-right">
+                --- download btn ---
+            </div> -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Voucher No</th>
+                    <th>Voucher Date</th>
+                    <th>Source Vch Type Name</th>
+                    <th>Original Vch Type Name</th>
+                    <th>Narration</th>
+                    <th>Ledger Head</th>
+                    <th>Debit Amount</th>
+                    <th>Credit Amount</th>
+                    <th>Ledger Group</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr >
+                    <td>000111222</td>
+                    <td>12 August 2018</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>25,000</td>
+                    <td>25,000</td>
+                    <td></td>
+                </tr>
+                <tr >
+                    <td>000111221</td>
+                    <td>11 August 2018</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>25,000</td>
+                    <td>25,000</td>
+                    <td></td>
+                </tr>
+                </tbody>
+
+            </table>
+            <dir-pagination-controls align="center" boundary-links="true"
+                                     template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"
+                                     on-page-change="getResultsPage(newPageNumber)">
+            </dir-pagination-controls>
+
+        </div>
+    </div>
+
+
+</div>

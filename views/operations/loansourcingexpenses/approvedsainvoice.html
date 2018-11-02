@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/viewdsainvoice">View DSA Invoice</a></li>
+        <li class="active">Approve - DSA Invoice </li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Approve DSA Invoice">
+            <div class="card-content">
+                <form name="createfldgform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <legend></legend>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Amount <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <input type="text" name="trancheid" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Payment Type <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                    <select class="form-control">
+                                        <option value="">NEFT</option>
+                                        <option value="">IMPS</option>
+                                        <option value="">UPI</option>
+                                        
+                                    </select>
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                               Comments <span class="required"></span>
+                            </label>
+                            <div class="col-sm-3">
+                                    <input type="text" name="tranchename" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Payment Reference <span class="required"></span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename" class="form-control">
+                            </div>
+                        </div>
+                        
+                        
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">Cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">Approve</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

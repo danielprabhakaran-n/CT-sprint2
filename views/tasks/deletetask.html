@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/taskdashboard">Task Dashboard</a></li>
+        <li><a href="#/taskoverview">Tasks Overview</a></li>
+        <li class="active">Delete Task</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Delete">
+            <div class="card-content">
+                <form name="closeform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Deleted Date </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" ng-model="deleteddate" name="deletedDate" datepicker-pop="dd MMMM yyyy"
+                                           is-open="opened1" min="minDate" max="restrictDate" class="form-control" >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Reason </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <textarea rows="3" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">Cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

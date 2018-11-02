@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/taskdashboard">Task Dashboard</a></li>
+        <li><a href="#/taskoverview">Tasks Overview</a></li>
+        <li class="active">Create Task</li>
+    </ul>
+     
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Create Task">
+            <div class="card-content">
+                <form name="createlenderform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Task ID <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="taskId" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Task Type<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="bank">INFORM</option>
+                                    <option value="ndfc">ENQUIRE</option>
+                                    <option value="ndfc">RECOVER</option>
+                                    <option value="ndfc">REMIT</option>
+                                    <option value="ndfc">RECON</option>
+                                    <option value="ndfc">HANDOVER</option>
+                                    <option value="ndfc">CUSTOMER</option>
+                                    <option value="ndfc">SYSTEM</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Description<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <textarea rows="3" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="active">Start Date<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="startDate" ng-model="startdate" datepicker-pop="dd MMMM yyyy"
+                                is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                     
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Due date<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="duedate" ng-model="duedate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="active">Assigned by<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="user1">User 1</option>
+                                    <option value="user2">User 2</option>
+                                    <option value="user3">User 3</option>
+                                    <option value="user4">User 4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="active">Assigned To<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="user1">User 1</option>
+                                    <option value="user2">User 2</option>
+                                    <option value="user3">User 3</option>
+                                    <option value="user4">User 4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="date" ng-model="date" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Status<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="inprogress">In Progress</option>
+                                    <option value="resolved">Resolved</option>
+                                    <option value="close">Close</option>
+                                    <option value="reopen">Reopen</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Comments</label>
+                            <div class="col-sm-3">
+                                <textarea rows="3" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">Cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

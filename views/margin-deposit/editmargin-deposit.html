@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <!-- <li><a href="#/viewmargindeposit">Tranche</a></li> -->
+        <li><a href="#/viewmargindeposit">view Margin Deposit</a></li>
+        <li class="active">Edit - Margin Deposit </li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit Margin Deposit">
+            <div class="card-content">
+                <form name="createfldgform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <legend></legend>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Margin Deposit Id <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="mgndpstid" value="000001" class="form-control">
+                                </div>
+                            </div>
+                             <label class="control-label col-sm-2">Lender Id<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="">SBI</option>
+                                    <option value="">RBL</option>
+                                    <option value="">YES</option>
+                                    <option value="">IND</option>
+                                </select>
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                             <label class="control-label col-sm-2">
+                                Tranche Id <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <select class="form-control">
+                                        <option value="">000001</option>
+                                        <option value="">000002</option>
+                                    </select>
+                                </div>
+                            </div> 
+                            <label class="control-label col-sm-2"> Deposit Amount <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text"  name="depositamount" placeholder="1,00,000" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Start Date <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="startdate" datepicker-pop="dd MMMM yyyy" value="12 Sep 2018"
+                                       is-open="opened1" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                            <label class="control-label col-sm-2">Due Date</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="duedate" datepicker-pop="dd MMMM yyyy" value="12 Mar 2019"
+                                       is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Interest Rate <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename" placeholder="8%"class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Available Amount <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename" placeholder="1,00,000" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Transaction Date <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input id="activateddate" type="text" name="activateddate" value="12 Sep 2018" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                            </div>
+                            <label class="control-label col-sm-2"> Bank Ref No <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="tranchename" value="00001234556" class="form-control">
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Margin Type <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value=""> Deposit </option>
+                                    <option value=""> Placement </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

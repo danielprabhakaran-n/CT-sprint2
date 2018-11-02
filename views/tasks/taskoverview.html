@@ -1,0 +1,156 @@
+<div class="content-container" ng-init="isCollapsed = false">
+    <ul class="breadcrumb">
+        <li><a href="#/taskdashboard">Task Dashboard</a></li>
+        <li class="active">Tasks Overview</li>
+    </ul>
+    <div class="card">
+        <div class="content">
+            <div class="toolbar">
+                <h4>Task Overview</h4>
+            </div>
+            <br>
+            <div class="">
+                <fieldset>
+                    <api-validate></api-validate>
+                            <div class="head-affix">
+                                <table class="table condensed-table">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                            <div class="form-inline">
+                                                <div class="form-group">
+                                            <span class="input-append grpinputicons">
+                                                <input ng-autofocus="true" autocomplete="off"
+                                                       typeahead-on-select="viewUser($item)"
+                                                       placeholder="{{'label.input.searchbyuser' | translate}}" type="text"
+                                                       ng-model="user"
+                                                       uib-typeahead="users.username as users.username for users in checkerTemplate.appUsers | filter:$viewValue | limitTo:8"
+                                                       class="form-control">
+                                                <button type="button" ng-click="isCollapsed = !isCollapsed"
+                                                        class="btn control btn-default"><i
+                                                        class="fa fa-chevron-down"></i></button>
+                                                <button type="button" ng-click="search()" class="btn btn-primary control"><i
+                                                        class="fa fa-search icon-white"></i></button>
+                                            </span>
+                                                </div>
+                                                <div class="form-group">
+                                            <span>
+                                                <button type="button" class="btn btn-danger"><i
+                                                        class="fa fa-times"></i> {{'label.button.close' | translate}}</button>
+                                                <button type="button" class="btn btn-warning"><i
+                                                        class="fa fa-laptop"></i> Reopen</button>
+                                                <a href="#/createtask"><button type="button" class="btn btn-primary"><i
+                                                        class="fa fa-plus"></i> Create Task</button></a>
+                                                <button type="button" class="btn btn-primary"><i
+                                                        class="fa fa-tag"></i> Owned Task</button>
+                                                <button type="button" class="btn btn-primary"><i
+                                                        class="fa fa-tags"></i> Subordinate Task</button>
+                                            </span>
+                                                </div>
+                                            </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                            <div ng-if="isCollapsed" class="blockoverlay" style="overflow-y: scroll">
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Assigned by" class="form-control"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Assigned To" class="form-control"/>
+                                    </div>
+                                </div><br/><br/>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Status" class="form-control"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <select class="form-control">
+                                            <option value="bank">--Select Task Type--</option>
+                                            <option value="bank">INFORM</option>
+                                            <option value="ndfc">ENQUIRE</option>
+                                            <option value="ndfc">RECOVER</option>
+                                            <option value="ndfc">REMIT</option>
+                                            <option value="ndfc">RECON</option>
+                                            <option value="ndfc">HANDOVER</option>
+                                            <option value="ndfc">CUSTOMER</option>
+                                            <option value="ndfc">SYSTEM</option>
+                                        </select>
+                                    </div>
+                                </div><br/><br/>
+                                <div class="form-group">
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Due Date" ng-model="dueDate" datepicker-pop="dd MMMM yyyy" class="form-control"/>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Assigned Date" ng-model="assigedDate" datepicker-pop="dd MMMM yyyy" class="form-control"/>
+                                    </div>
+                                </div><br/><br/>
+                                <div style="margin-left:15px">
+                                    <a ng-click="search()" class="btn btn-primary"><i class="icon-search icon-white"></i>{{'label.button.advancesearch'
+                                    | translate}}</a>
+                                    <br/>
+                                </div>
+                                <br/>
+                                <hr/>
+                            </div>
+                            <div>
+                                <table class="table" style="margin-top: -20px;">
+                                    <thead>
+                                    <tr class="graybg">
+                                        <th><input type="checkbox" ng-click="checkerInboxAllCheckBoxesClicked()"
+                                                   ng-checked="checkerInboxAllCheckBoxesMet()"/></th>
+                                        <th>Task name</th>
+                                        <th>Task Type</th>
+                                        <th>Description</th>
+                                        <th>Start Date</th>
+                                        <th>Due date</th>
+                                        <th>Assigned by</th>
+                                        <th>Assigned To</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th>Comments</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="">
+                                        <td><input type="checkbox" data-ng-model="checkData[1]"/></td>
+                                        <td><a href="#/viewtask">Daily Report</a></td>
+                                        <td><a href="#/viewtask">INFORM</a></td>
+                                        <td><a href="#/viewtask">Taking Report End of Every Day</a></td>
+                                        <td><a href="#/viewtask">12 May 2018</a></td>
+                                        <td><a href="#/viewtask">29 Nov 2018</a></td>
+                                        <td><a href="#/viewtask">Gowtham</a></td>
+                                        <td><a href="#/viewtask">Raju</a></td>
+                                        <td><a href="#/viewtask">27 Aug 2018</a></td>
+                                        <td><a href="#/viewtask">Resolved</a></td>
+                                        <td><a href="#/viewtask">Taking report at the evening</a></td>
+                                    </tr>
+                                    <tr class="pointer-main">
+                                        <td><input type="checkbox" data-ng-model="checkData[2]"/></td>
+                                        <td>Monthly Report</td>
+                                        <td>INFORM</td>
+                                        <td>Taking Report End of Every Day</td>
+                                        <td>12 May 2018</td>
+                                        <td>29 Nov 2018</td>
+                                        <td>Gowtham</td>
+                                        <td>Raju</td>
+                                        <td>27 Aug 2018</td>
+                                        <td>Resolved</td>
+                                        <td>Taking report at the evening</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="text-center">
+                                    <dir-pagination-controls pagination-id="inbox"
+                                                             boundary-links="true"
+                                                             template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"/>
+                            </div>
+                         </fieldset>
+            </div>
+        </div>
+    </div>
+</div>

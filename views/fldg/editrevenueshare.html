@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/fldg">Tranche</a></li>
+        <li class="active">Edit - Revenue Share </li>
+    </ul>
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit Share Details for FLDG">
+            <div class="card-content">
+                <form name="editrevenueshare" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2"> Tranche Id <span class="required">*</span> </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="treancheid" value="000001" class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Start Date <span class="required">*</span> </label>
+                            <div class="col-sm-3">
+                                <input type="text" name="startdate" class="form-control" ng-model="startdate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate" placeholder="12 May 2018">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">End Date <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="enddate" class="form-control" ng-model="editdate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate" placeholder="22 May 2019">
+                            </div>
+                            <label class="control-label col-sm-2">Billing frequency <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="billfreq" value="Quartely" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Min Volume <span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="minvol" value="1,00,000" class="form-control">
+                            </div>
+                            <label class="control-label col-sm-2">Max Volume</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="maxvol" value="10,00,000 " class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">Base Rate</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="taxgrpincome" value="12" class="form-control"/>
+                                </div>
+                            <label class="control-label col-sm-2">Cap Rate</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="caprate" value="18" class="form-control"/>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">Loan Issue Amount Share %</label>
+                                <div class="col-sm-3">
+                                    <input  type="text" name="loanissueamountshare" value="2" class="form-control"/>
+                                </div>
+                            <label class="control-label col-sm-2">Normal Interest share %</label>
+                            <div class="col-sm-3">
+                                <input type="text" name="normalintshare" value="20" class="form-control"/>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">Interest share % above Cap rate</label>
+                                <div class="col-sm-3">
+                                    <input  type="text" name="intratecaprate" value="50" class="form-control"/>
+                                </div>
+                            <label class="control-label col-sm-2">PF</label>
+                            <div class="col-sm-3">
+                                <input type="text"  value="60%" name="pf" class="form-control"/>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">Penal Interest</label>
+                                <div class="col-sm-3">
+                                    <input  type="text" value="20%" name="penelint" placeholder="%" class="form-control"/>
+                                </div>
+                            <label class="control-label col-sm-2">Recovery</label>
+                            <div class="col-sm-3">
+                                <input type="text" value="30%" name="shareofpf" value="20" class="form-control"/>
+                            </div>
+                           
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">Foreclosure % Share</label>
+                                <div class="col-sm-3">
+                                    <input  type="text" name="foreclosureshare" value="40%" class="form-control"/>
+                                </div>
+                            <label class="control-label col-sm-2">Tax Group for Interest Income</label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="">Tax Group 1</option>
+                                    <option value="">Tax Group 2</option>
+                                </select>
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">Tax Group for Charges Income</label>
+                                <div class="col-sm-3">
+                                    <select class="form-control">
+                                        <option value="">Tax Group 3</option>
+                                        <option value="">Tax Group 4</option>
+                                    </select>
+                                </div>         
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">Cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

@@ -1,0 +1,65 @@
+<div class="content-container" ng-init="isClose=false">
+        <ul class="breadcrumb">
+                <li><a href="#/taskdashboard">Task Dashboard</a></li>
+                <li><a href="#/taskoverview">Tasks Overview</a></li>
+                <li class="active">Task View</li>
+            </ul>
+        <div class="card">
+            <div class="content">
+                <div class="toolbar">
+                    <h3>Task View</h3>
+                </div>
+                <a href="#/reassigntask"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i> Reassign Task</button></a>
+                <a href="#/closetask"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i>    Close Task</button></a>
+                <a href="#/reopentask"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i>   Reopen Task</button></a>
+                <a href="#/updatetask"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i>   Update Task</button></a>
+                <a href="#/deletetask"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i>   Delete Task</button></a> 
+                <a href="#/taskstatustransition"><button class="btn btn-primary pull-right" ng-click="routeTo()"><i class="fa fa-plus"></i> Status Transition</button></a>
+                <br>
+                <table class="table table-condensed">
+                        <tr>
+                            <th>Task name</th>
+                            <td>Daily Report</td>
+                        </tr>
+                        <tr>
+                            <th>Task Type</th>
+                            <td>INFORM</td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td>Taking Report End of Every Day</td>
+                        </tr>
+                        <tr>
+                            <th>Start Date</th>
+                            <td>12 May 2018</td>
+                        </tr>
+                        <tr>
+                            <th>Due date</th>
+                            <td>29 Nov 2018</td>
+                        </tr>
+                        <tr>
+                            <th>Assigned by</th>
+                            <td>Gowtham</td>
+                        </tr>
+                        <tr>
+                            <th>Assigned To</th>
+                            <td>Raju</td>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <td>27 Aug 2018</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>Resolved</td>
+                        </tr>
+                        <tr>
+                            <th>Comments</th>
+                            <td>Taking report at the evening</td>
+                        </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    

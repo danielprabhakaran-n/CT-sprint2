@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/fldg">Tranche</a></li>
+        <li><a href="#/viewfldg">view Tranche</a></li>
+        <li class="active">Edit - Tranche </li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit Tranche">
+            <div class="card-content">
+                <form name="createfldgform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <legend></legend>
+                        <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Lender Id <span class="required">*</span>
+                                </label>
+                                <div class="col-sm-3">
+                                    <div>
+                                        <select class="form-control">
+                                            <option value="">10001</option>
+                                            <option value="">22213</option>
+                                            <option value="">33423</option>
+                                            <option value="">43452</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="control-label col-sm-2">Scheme Id </label>
+                                <div class="col-sm-3">
+                                        <select class="form-control">
+                                            <option value="">Scheme 1</option>
+                                            <option value="">Scheme 2</option>
+                                            <option value="">Scheme 3</option>
+                                            <option value="">Scheme 4</option>
+                                        </select>
+                                    </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">
+                                    Tranche Id <span class="required">*</span>
+                                </label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="trancheid" value="000001" class="form-control">
+                                </div>
+                                <label class="control-label col-sm-2">Tranche Name<span class="required">*</span></label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="tranchename" value="Tranche 1" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" for="trancheloanlimit">Tranche Loan Limit </label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="trancheloanlimit" value="1,00,00,000" placeholder=" " class="form-control">
+                                </div>
+                                <label class="control-label col-sm-2" for="mobileNo">Tranche Risk cover %</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="tranchename" value="50%" placeholder="" class="form-control">
+                                </div>
+    
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Tranche Risk cover limit </label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="tranchelimit" value="50,00,000" placeholder="" class="form-control">
+                                </div>
+                                <label class="control-label col-sm-2">Margin Money %</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="marginmoney"  value="25%" placeholder="" class="form-control">
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Margin Money Available</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="morginmoneyavailable" value="25,00,000" placeholder="" class="form-control">
+                                </div>
+                                <label class="control-label col-sm-2">Tranche Loan available</label>
+                                <div class="col-sm-3">
+                                    <input type="text" name="tranchename" value="50,00,000" placeholder="" class="form-control">
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                    <label class="control-label col-sm-2">Tranche Risk cover Available</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="tranchename" value="40,00,000" placeholder="" class="form-control">
+                                    </div>
+                                <label class="control-label col-sm-2" for="mobileNo">Active</label>
+                                <div class="col-sm-3">
+                                    <input type="checkbox" name="active" class="margintop8px" checked />
+                                </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                    
+                                
+                                <label class="control-label col-sm-2">Submitted Date</label>
+                                    <div class="col-sm-3">
+                                        <input id="submitteddate" ng-model="submiteddate" type="text" name="submitteddate" datepicker-pop="dd MMMM yyyy"
+                                               is-open="opened1" min="minDate" max="restrictDate"  class="form-control"/>
+                                    </div>
+                                    <label class="control-label col-sm-2">Activated Date<span class="required">*</span></span></label>
+                                <div class="col-sm-3">
+                                    <input id="activateddate" ng-model="activateddate" type="text" name="activateddate" datepicker-pop="dd MMMM yyyy"
+                                           is-open="opened2" min="minDate" max="restrictDate"  class="form-control"/>
+                                </div>
+                            </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

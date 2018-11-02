@@ -1,0 +1,114 @@
+<div class="content-container" ng-init="lenderFilter = false">
+    <ul class="breadcrumb">
+        <li class="active">Channel Partners</li>
+    </ul>
+    <api-validate></api-validate>
+
+    <div class="card">
+        <div class="toolbar">
+            <h4>List of Channel Partners</h4>
+        </div>
+        <div class="content">
+            <br>
+
+            <div class="row">
+                <div class="col-sm-8">
+                    <form ng-submit="search()" class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-md-8">
+                                <input ng-autofocus="true" ng-model="filterText" ng-keyup="onFilter()" type="text"
+                                       class="form-control unstyled"
+                                       placeholder="Search by Channel Partner Id, Channel Parner Name, PAN, Start Date">
+                            </div>
+                            <div class="col-md-2">
+                                <div class="input-group">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary form-control" uib-tooltip="Search">
+                                            <span class="fa fa-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <a href="" class="btn btn-primary rs-btn" uib-tooltip="Filter" ng-click="lenderFilter = !lenderFilter"><i
+                                        class="fa fa-filter"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-sm-4">
+                    <a href="#/createchannelpartner" class="btn btn-primary pull-right"><i
+                            class="fa fa-plus"></i> Create Channel Partner</a> &nbsp;&nbsp;
+                    <!--<a href="#/bulkimportlenders" class="btn btn-primary pull-right" has-permission='CREATE_CLIENT'><i-->
+                    <!--+                            class="fa fa-upload"></i>&nbsp;Import Lenders</a>-->
+                </div>
+            </div>
+            <hr/>
+            <div ng-if="lenderFilter" uib-collapse="isCollapsed" class="blockoverlay">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="Channel Partner Id" class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="Channel Parner Name" class="form-control"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="PAN" class="form-control" />
+                        </div>
+                    </div>
+                     <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" placeholder="Start Date" ng-model="startDate" datepicker-pop="dd MMMM yyyy" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <!-- Advance Search Button -->
+                <span><a ng-click="advancesearch(1)" class="btn btn-primary bottomspacing"><i class="icon-search icon-white"></i> {{'label.button.advancesearch'
+                                | translate}}</a>
+                    </span>
+                <!-- Reset Button -->
+                <span>
+                        <a ng-click="resetSearch()" class="btn btn-primary bottomspacing"> Reset</a>
+                    </span>
+                <hr/>
+            </div>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Channel Partner Id</th>
+                    <th>Channel Partner Name</th>
+                    <th>Commission Share</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr >
+                    <td><a href="#/viewchannelpartner">000001</a></td>
+                    <td><a href="#/viewchannelpartner">Anil Pillai & CO</a></td>
+                    <td><a href="#/viewchannelpartner">20%</a></td>
+                </tr>
+                <tr >
+                    <td><a href="#/viewchannelpartner">2222234</a></td>
+                    <td><a href="#/viewchannelpartner">Channel partner 2</a></td>
+                    <td><a href="#/viewchannelpartner">30%</a></td>
+                </tr>
+                </tbody>
+
+            </table>
+            <dir-pagination-controls align="center" boundary-links="true"
+                                     template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"
+                                     on-page-change="getResultsPage(newPageNumber)">
+            </dir-pagination-controls>
+
+        </div>
+    </div>
+
+
+</div>

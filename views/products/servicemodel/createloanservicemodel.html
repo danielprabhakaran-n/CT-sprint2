@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/servicemodels">Service Models</a></li>
+        <li class="active">Create - Service Models</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Create Service Models">
+            <div class="card-content">
+                <form name="createservicemodel" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Product Type <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <select class="form-control">
+                                        <option value="">Loan</option>
+                                        <option value="">SB</option>
+                                        <option value="">TD</option>
+                                        <option value="">RD</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Product ID<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <select class="form-control">
+                                        <option value="">Product 1</option>
+                                        <option value="">Product 2</option>
+                                        <option value="">Product 3</option>
+                                        <option value="">Product 4</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Funding model<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="bank">OWN</option>
+                                    <option value="ndfc">EXT</option>
+                                    <option value="ndfc">SYN</option>
+                                    <option value="ndfc">SECURITY</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Repayment Model<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="bank">OWN</option>
+                                    <option value="ndfc">EXT</option>
+                                    <option value="ndfc">SYN</option>
+                                    <option value="ndfc">SECURITY</option>
+                                </select>
+                            </div>
+                            <label class="control-label col-sm-2">Back Office Processing<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="bank">OWN</option>
+                                    <option value="ndfc">EXT</option>
+                                    <option value="ndfc">OUTSOURCE</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Risk sharing  Model<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="bank">OWN</option>
+                                    <option value="ndfc">EXT</option>
+                                    <option value="ndfc">SYNDICATE</option>
+                                </select>
+                            </div>
+                            <label class="control-label col-sm-2">Risk Sharing type<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="bank">FLAT %</option>
+                                    <option value="ndfc">TRANCHES</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Recovery support<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control">
+                                    <option value="bank">NONE</option>
+                                    <option value="ndfc">SOFT</option>
+                                    <option value="ndfc">HARD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

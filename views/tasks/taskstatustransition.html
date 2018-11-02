@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/taskdashboard">Task Dashboard</a></li>
+        <li><a href="#/taskoverview">Tasks Overview</a></li>
+        <li class="active">Status Transition</li>
+    </ul>
+     
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Status Transition">
+            <div class="card-content">
+                <form name="createlenderform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th> Task Name</th>
+                                    <th> Task Type</th>
+                                    <th> Description</th>
+                                    <th> assigned by</th>
+                                    <th> assigned to</th>
+                                    <th> task date </th>
+                                    <th> task due date </th>
+                                    <th> status </th>
+                                    <th> closed date </th>
+                                    <th> Next Task </th>
+                                    <th> Next Owner </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Daily Update</td>
+                                    <td>Inform</td>
+                                    <td>Daily update will be take at every eod</td>
+                                    <td>Gotham</td>
+                                    <td>Hari</td>
+                                    <td>12 May 2018</td>
+                                    <td>12 Nov 2018</td>
+                                    <td>close</td>
+                                    <td>Not Closed</td>
+                                    <td>Monthly Update</td>
+                                    <td>Gotham</td>
+                                </tr>
+                                <tr>
+                                    <td>Monthly Update</td>
+                                    <td>Inform</td>
+                                    <td>Daily update will be take at every eod</td>
+                                    <td>Gotham</td>
+                                    <td>Hari</td>
+                                    <td>12 May 2018</td>
+                                    <td>12 Nov 2018</td>
+                                    <td>close</td>
+                                    <td>Not Closed</td>
+                                    <td>Monthly Update</td>
+                                    <td>Gotham</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>

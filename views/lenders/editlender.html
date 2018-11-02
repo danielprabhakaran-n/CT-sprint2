@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<div class="content-container">
+    <ul class="breadcrumb">
+        <li><a href="#/viewlender">View Lender</a></li>
+        <li class="active">Edit - Shasam</li>
+    </ul>
+
+    <wizard current-step="step" class="card well">
+        <wz-step icon="fa fa-circle-o" wz-title="Edit Lender">
+            <div class="card-content">
+                <form name="createlenderform" novalidate="" class="form-horizontal" rc-submit="submit()">
+                    <api-validate></api-validate>
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">
+                                Lender Id <span class="required">*</span>
+                            </label>
+                            <div class="col-sm-3">
+                                <div>
+                                    <input type="text" name="lenderid" value="0000001"class="form-control">
+                                </div>
+                            </div>
+                            <label class="control-label col-sm-2">Lender Name<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="lendername" value="SBI"class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Lender Type<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <select class="form-control" value="{{lender.type}}">
+                                    <option value="bank">BANK</option>
+                                    <option value="ndfc">NBFC</option>
+                                </select>
+                            </div>
+                            <label class="control-label col-sm-2" for="pan">PAN<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="pan" value="CPXU082154" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">GSTIN<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="text" name="gstin" value="22BBBBB0000A1Z5" class="form-control"/>
+                            </div>
+                            <label class="control-label col-sm-2" for="gstincluded">GST Included<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="Checkbox" name="gstIncluded" value="Yes" class="margintop8px"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="active">Active<span class="required">*</span></label>
+                            <div class="col-sm-3">
+                                <input type="Checkbox" name="active" value="No" class="margintop8px"/>
+                            </div>
+                            <label class="control-label col-sm-2">Submitted Date</label>
+                            <div class="col-sm-3">
+                                <input id="submitteddate" type="text" ng-model="submitteddate" name="submitteddate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened1" min="minDate" max="restrictDate" placeholder="23 Sep 2018" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2">Activated Date</label>
+                            <div class="col-sm-3">
+                                <input id="activateddate" type="text" ng-model="activateddate" name="activateddate" datepicker-pop="dd MMMM yyyy"
+                                       is-open="opened2" min="minDate" max="restrictDate" placeholder="Not Activated" class="form-control"/>
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="text-center">
+                            <a id="cancel" ng-href="{{cancel}}" class="btn btn-default">cancel</a>
+                            <button id="save" type="submit" class="btn btn-primary">submit</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </wz-step>
+    </wizard>
+</div>
