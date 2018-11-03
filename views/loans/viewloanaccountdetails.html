@@ -73,7 +73,7 @@
                             class="{{button.icon}} "></i>&nbsp;{{'label.' + button.name |
                         translate}}</a>
                     <a href="#" class="btn btn-primary"><i class="fa fa-trash-o"></i> {{ 'label.button.delete' | translate}}</a>
-
+                    <!-- <a href="#/addbounce" class="btn btn-primary"><i class="fa fa-plus"></i> {{ 'label.button.addbounce' | translate}}</a> -->
                       <span ng-show="buttons.options" uib-dropdown  class="btn-group dropdown" on-toggle="toggled(open)">
                           <a class="btn btn-primary" uib-dropdown-toggle>
                               {{ 'label.button.more' | translate}}
@@ -920,6 +920,214 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </uib-tab>
+
+                    <uib-tab  heading="{{'Contact'}}" >
+                        <div >
+                            <button class="btn btn-primary pull-right" ng-click="routeTocontact()"><i class="icon-plus icon-white"></i> {{'Add Contact'}}</button>
+                            <br>
+    
+                            <table class="table"   class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th >Contact Id</th>
+                                        <th >Contact Name</th>
+                                        <th >Contact Designation</th>
+                                        <th >Contact Email Id</th>
+                                        <th >Contact Phone No</th>
+                                        <th >Contact Type</th>
+                                        <th >Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr >
+                                    <td>
+                                        {{25}}
+                                    </td>
+                                    <td>
+                                        {{'Rajesh'}}
+                                    </td>
+                                    <td>
+                                        {{'Manager'}}
+                                    </td>
+                                    <td>
+                                        {{'jackson@gmail.com'}}
+                                    </td>
+                                    <td>
+                                        {{'982546325'}}
+                                    </td>
+                                    <td>
+                                        Funds
+                                    </td>
+                                    <td>
+                                        <a href="#/editcontact" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+                                        <a href="#/viewcontact" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        {{26}}
+                                    </td>
+                                    <td>
+                                        {{'Gopal'}}
+                                    </td>
+                                    <td>
+                                        {{'Manager'}}
+                                    </td>
+                                    <td>
+                                        {{'gopalasamy@gmail.com'}}
+                                    </td>
+                                    <td>
+                                        {{'983456325'}}
+                                    </td>
+                                    <td>
+                                        Funds
+                                    </td>
+                                    <td>
+                                        <a href="#/editcontact" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+                                        <a href="#/viewcontact" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                                
+                                </tbody>
+                            </table>
+    
+                        </div>
+                        <!--</fieldset>-->
+    
+                    </uib-tab>
+
+                    <uib-tab  heading="Individuals" >	
+                        <div >
+                            <button class="btn btn-primary pull-right" ng-click="routeToindividual()"><i class="fa fa-plus"></i> {{'Add Individuals'}}</button>
+                            <br>
+    
+                            <table class="table"   class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th >Individual Id</th>
+                                        <th >Individual Name</th>
+                                        <th >Individual Pan Number</th>
+                                        <th >Individual Birth date</th>
+                                        <th >Individual Father Name</th>
+                                        <th >Individual Company Name</th>
+                                        <th >Individual Company Designation</th>
+                                        <th >Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <tr >
+                                    <td>
+                                        {{52}}
+                                    </td>
+                                    <td>
+                                        {{'Rajesh'}}
+                                    </td>
+                                    <td>
+                                        {{'56231452'}}
+                                    </td>
+                                    <td>
+                                        {{'02 Jan 1988'}}
+                                    </td>
+                                    <td>
+                                        {{'Saravanan'}}
+                                    </td>
+                                    <td>
+                                        {{'HCL'}}
+                                    </td>
+                                    <td>
+                                        {{'Manager'}}
+                                    </td>
+                                    <td>
+                                        <a href="#/editindividual" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+                                        <a href="#/viewindividual" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                                <tr >
+                                    <td>
+                                        {{52}}
+                                    </td>
+                                    <td>
+                                        {{'Shankar'}}
+                                    </td>
+                                    <td>
+                                        {{'56232342'}}
+                                    </td>
+                                    <td>
+                                        {{'23 Jan 1988'}}
+                                    </td>
+                                    <td>
+                                        {{'Rajan'}}
+                                    </td>
+                                    <td>
+                                        {{'HCL'}}
+                                    </td>
+                                    <td>
+                                        {{'Manager'}}
+                                    </td>
+                                    <td>
+                                        <a href="#/editindividual" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+                                        <a href="#/viewindividual" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+    
+                        </div>
+                        <!--</fieldset>-->
+    
+                    </uib-tab>
+
+                    <uib-tab  heading="Bounce" >	
+                        <div >
+                            <button class="btn btn-primary pull-right" ng-click="routeToBounce()"><i class="fa fa-plus"></i> Add Bounce </button>
+                            <br>
+                            <table class="table" class="table table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Bounce Date</th>
+                                    <th>EMI Date</th>
+                                    <th>Class Transaction Date</th>
+                                    <th>Charge Name</th>
+                                    <th>Charge Date</th>
+                                    <th>Charge Amount</th>
+                                    <th>Reason</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                
+                                <tbody>
+                                    <tr >
+                                        <td>14 November 2018</td>
+                                        <td>14 November 2018</td>
+                                        <td>27 November 2018</td>
+                                        <td>Bounce Charge</td>
+                                        <td>29 November 2018</td>
+                                        <td>50,00,000</td>
+                                        <td>Overdue balance exist</td>
+                                        <td>
+                                            <a href="#/viewbounce" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                    <tr >
+                                        <td>23 November 2018</td>
+                                        <td>22 November 2018</td>
+                                        <td>09 December 2018</td>
+                                        <td>Bounce Charge</td>
+                                        <td>10 December 2018</td>
+                                        <td>1,00,00,000</td>
+                                        <td>Bank rejected</td>
+                                        <td>
+                                            <a href="#/viewbounce" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                
+                            </table>
+    
+                        </div>
+                        <!--</fieldset>-->
+    
                     </uib-tab>
 
                     <uib-tab heading="{{'label.heading.loandocuments' | translate}}" select="getLoanDocuments()">

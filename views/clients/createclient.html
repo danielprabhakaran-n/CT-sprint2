@@ -195,7 +195,10 @@
                                 </select>                            </div>
                             <label class="control-label col-sm-2">Business Sub Industry <span class="required">*</span></label>
                             <div class="col-sm-3">
-                                <input type="text" name="tranchename" class="form-control">
+                                <select id="businessSubInd" ng-model="formData.clientNonPersonDetails.businessSubInd"  class="form-control"
+                                ng-options="mainBusinessLine.id as mainBusinessLine.name for mainBusinessLine in clientNonPersonMainBusinessLineOptions" value="{{mainBusinessLine.id}}">
+                                <option value="">--{{'label.menu.businesssubindustry' | translate}}--</option>
+                                </select> 
                             </div>
                         </div>
                     </div>

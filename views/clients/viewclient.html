@@ -1068,283 +1068,282 @@
 
 				<!-- add -->
 
-				<uib-tab  heading="Individuals" >
-						
-						<div >
-							<button class="btn btn-primary pull-right" ng-click="routeToindividual()"><i class="fa fa-plus"></i> {{'Add Individuals'}}</button>
-							<br>
-	
-							<table class="table"   class="table table-condensed">
-								<thead>
-									<tr>
-										<th >Individual Id</th>
-										<th >Individual Name</th>
-										<th >Individual Pan Number</th>
-										<th >Individual Birth date</th>
-										<th >Individual Father Name</th>
-										<th >Individual Company Name</th>
-										<th >Individual Company Designation</th>
-										<th >Action</th>
-									</tr>
-								</thead>
-								<tbody>
-								<tr >
-									<td>
-										{{52}}
-									</td>
-									<td>
-										{{'Rajesh'}}
-									</td>
-									<td>
-										{{'56231452'}}
-									</td>
-									<td>
-										{{'02 Jan 1988'}}
-									</td>
-									<td>
-										{{'Saravanan'}}
-									</td>
-									<td>
-										{{'HCL'}}
-									</td>
-									<td>
-										{{'Manager'}}
-									</td>
-									<td>
-										<a href="#/editindividual" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-									</td>
+				<uib-tab  heading="Individuals" >	
+					<div >
+						<button class="btn btn-primary pull-right" ng-click="routeToindividual()"><i class="fa fa-plus"></i> {{'Add Individuals'}}</button>
+						<br>
+
+						<table class="table"   class="table table-condensed">
+							<thead>
+								<tr>
+									<th >Individual Id</th>
+									<th >Individual Name</th>
+									<th >Individual Pan Number</th>
+									<th >Individual Birth date</th>
+									<th >Individual Father Name</th>
+									<th >Individual Company Name</th>
+									<th >Individual Company Designation</th>
+									<th >Action</th>
 								</tr>
-								<tr >
-									<td>
-										{{52}}
-									</td>
-									<td>
-										{{'Shankar'}}
-									</td>
-									<td>
-										{{'56232342'}}
-									</td>
-									<td>
-										{{'23 Jan 1988'}}
-									</td>
-									<td>
-										{{'Rajan'}}
-									</td>
-									<td>
-										{{'HCL'}}
-									</td>
-									<td>
-										{{'Manager'}}
-									</td>
-									<td>
-										<a href="#/editindividual" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-									</td>
+							</thead>
+							<tbody>
+							<tr >
+								<td>
+									{{52}}
+								</td>
+								<td>
+									{{'Rajesh'}}
+								</td>
+								<td>
+									{{'56231452'}}
+								</td>
+								<td>
+									{{'02 Jan 1988'}}
+								</td>
+								<td>
+									{{'Saravanan'}}
+								</td>
+								<td>
+									{{'HCL'}}
+								</td>
+								<td>
+									{{'Manager'}}
+								</td>
+								<td>
+									<a href="#/editindividual" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+									<a href="#/viewindividual" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+								</td>
+							</tr>
+							<tr >
+								<td>
+									{{52}}
+								</td>
+								<td>
+									{{'Shankar'}}
+								</td>
+								<td>
+									{{'56232342'}}
+								</td>
+								<td>
+									{{'23 Jan 1988'}}
+								</td>
+								<td>
+									{{'Rajan'}}
+								</td>
+								<td>
+									{{'HCL'}}
+								</td>
+								<td>
+									{{'Manager'}}
+								</td>
+								<td>
+									<a href="#/editindividual" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+									<a href="#/viewindividual" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<!--</fieldset>-->
+
+				</uib-tab>
+				<uib-tab  heading="{{'Funding'}}" >
+					<div >
+						<button class="btn btn-primary pull-right" ng-click="routeTofund()"><i class="icon-plus icon-white"></i>{{'Add Funding'}}</button>
+						<br>
+
+						<table class="table"   class="table table-condensed">
+							<thead>
+								<tr>
+									<th >Bank Id</th>
+									<th >Bank Name</th>
+									<th >IFSC Code</th>
+									<th >Bank Account Type</th>
+									<th >Bank Account Number</th>
+									<th >Bank Payment Method</th>
+									<th >Action</th>
 								</tr>
-								</tbody>
-							</table>
-	
-						</div>
-						<!--</fieldset>-->
-	
-					</uib-tab>
+							</thead>
+							<tbody>
+							<tr >
+								<td>
+									{{251}}
+								</td>
+								<td>
+									{{'ICICI'}}
+								</td>
+								<td>
+									{{'ICI005623'}}
+								</td>
+								<td>
+									{{'SB Account '}}
+								</td>
+								<td>
+									{{'4125369875'}}
+								</td>
+								<td>
+									{{'Cash'}}
+								</td>
+								<td>
+									<a href="#/editfunding" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+								</td>
+							</tr>
+							<tr >
+								<td>
+									{{256}}
+								</td>
+								<td>
+									{{'ICICI'}}
+								</td>
+								<td>
+									{{'ICI005623'}}
+								</td>
+								<td>
+									{{'SB Account '}}
+								</td>
+								<td>
+									{{'4125369345'}}
+								</td>
+								<td>
+									{{'Cash'}}
+								</td>
+								<td>
+									<a href="#/editfunding" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+								</td>
+							</tr>
+							</tbody>
+						</table>
 
+					</div>
+					<!--</fieldset>-->
 
+				</uib-tab>
+				<uib-tab  heading="{{'Contact'}}" >
+					<div >
+						<button class="btn btn-primary pull-right" ng-click="routeTocontact()"><i class="icon-plus icon-white"></i>{{'Add Contact'}}</button>
+						<br>
 
-					<uib-tab  heading="{{'Funding'}}" >
-							<div >
-								<button class="btn btn-primary pull-right" ng-click="routeTofund()"><i class="icon-plus icon-white"></i>{{'Add Funding'}}</button>
-								<br>
-		
-								<table class="table"   class="table table-condensed">
-									<thead>
-										<tr>
-											<th >Bank Id</th>
-											<th >Bank Name</th>
-											<th >IFSC Code</th>
-											<th >Bank Account Type</th>
-											<th >Bank Account Number</th>
-											<th >Bank Payment Method</th>
-											<th >Action</th>
-										</tr>
-									</thead>
-									<tbody>
-									<tr >
-										<td>
-											{{251}}
-										</td>
-										<td>
-											{{'ICICI'}}
-										</td>
-										<td>
-											{{'ICI005623'}}
-										</td>
-										<td>
-											{{'SB Account '}}
-										</td>
-										<td>
-											{{'4125369875'}}
-										</td>
-										<td>
-											{{'Cash'}}
-										</td>
-										<td>
-											<a href="#/editfunding" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-										</td>
-									</tr>
-									<tr >
-										<td>
-											{{256}}
-										</td>
-										<td>
-											{{'ICICI'}}
-										</td>
-										<td>
-											{{'ICI005623'}}
-										</td>
-										<td>
-											{{'SB Account '}}
-										</td>
-										<td>
-											{{'4125369345'}}
-										</td>
-										<td>
-											{{'Cash'}}
-										</td>
-										<td>
-											<a href="#/editfunding" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-										</td>
-									</tr>
-									</tbody>
-								</table>
-		
-							</div>
-							<!--</fieldset>-->
-		
-						</uib-tab>
-						<uib-tab  heading="{{'Contact'}}" >
-							<div >
-								<button class="btn btn-primary pull-right" ng-click="routeTocontact()"><i class="icon-plus icon-white"></i>{{'Add Contact'}}</button>
-								<br>
-		
-								<table class="table"   class="table table-condensed">
-									<thead>
-										<tr>
-											<th >Contact Id</th>
-											<th >Contact Name</th>
-											<th >Contact Designation</th>
-											<th >Contact Email Id</th>
-											<th >Contact Phone No</th>
-											<th >Contact Type</th>
-											<th >Action</th>
-										</tr>
-									</thead>
-									<tbody>
-									<tr >
-										<td>
-											{{25}}
-										</td>
-										<td>
-											{{'Rajesh'}}
-										</td>
-										<td>
-											{{'Manager'}}
-										</td>
-										<td>
-											{{'jackson@gmail.com'}}
-										</td>
-										<td>
-											{{'982546325'}}
-										</td>
-										<td>
-											Funds
-										</td>
-										<td>
-											<a href="#/editcontact" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-										</td>
-									</tr>
-									<tr >
-										<td>
-											{{26}}
-										</td>
-										<td>
-											{{'Gopal'}}
-										</td>
-										<td>
-											{{'Manager'}}
-										</td>
-										<td>
-											{{'gopalasamy@gmail.com'}}
-										</td>
-										<td>
-											{{'983456325'}}
-										</td>
-										<td>
-											Funds
-										</td>
-										<td>
-											<a href="#/editcontact" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-										</td>
-									</tr>
-									
-									</tbody>
-								</table>
-		
-							</div>
-							<!--</fieldset>-->
-		
-						</uib-tab>
-						<uib-tab  heading="{{'Service Persons'}}" >
-							<div >
-								<button class="btn btn-primary pull-right" ng-click="routeToserviceperson()"><i class="icon-plus icon-white"></i>{{'Add Service Person'}}</button>
-								<br>
-		
-								<table class="table" class="table table-condensed">
-									<thead>
-										<th>Role</th>
-										<th>Employee Id</th>
-										<th>Action</th>
-									</thead>
-									<tbody>
-									<tr >
-										<td>
-											HR
-										</td>
-										<td>
-											Raj
-										</td>
-										<td>
-											<a href="#/editserviceperson" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-										</td>
-									</tr>
-									<tr >
-										<td>
-											Fund Officer
-										</td>
-										<td>
-											Hariharan
-										</td>
-										<td>
-											<a href="#/editserviceperson" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-										</td>
-									</tr>
-									<!-- <tr>
-										<th >
-											{{'User Id'}}
-										</th>
-										<td>
-											{{'21'}}
-										</td>
-										<td>
-											<a href="#/editserviceperson" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
-										</td>
-									</tr> -->
-									</tbody>
-								</table>
-		
-							</div>
-							<!--</fieldset>-->
-		
-						</uib-tab>
+						<table class="table"   class="table table-condensed">
+							<thead>
+								<tr>
+									<th >Contact Id</th>
+									<th >Contact Name</th>
+									<th >Contact Designation</th>
+									<th >Contact Email Id</th>
+									<th >Contact Phone No</th>
+									<th >Contact Type</th>
+									<th >Action</th>
+								</tr>
+							</thead>
+							<tbody>
+							<tr >
+								<td>
+									{{25}}
+								</td>
+								<td>
+									{{'Rajesh'}}
+								</td>
+								<td>
+									{{'Manager'}}
+								</td>
+								<td>
+									{{'jackson@gmail.com'}}
+								</td>
+								<td>
+									{{'982546325'}}
+								</td>
+								<td>
+									Funds
+								</td>
+								<td>
+									<a href="#/editcontact" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+									<a href="#/viewcontact" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+								</td>
+							</tr>
+							<tr >
+								<td>
+									{{26}}
+								</td>
+								<td>
+									{{'Gopal'}}
+								</td>
+								<td>
+									{{'Manager'}}
+								</td>
+								<td>
+									{{'gopalasamy@gmail.com'}}
+								</td>
+								<td>
+									{{'983456325'}}
+								</td>
+								<td>
+									Funds
+								</td>
+								<td>
+									<a href="#/editcontact" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+									<a href="#/viewcontact" uib-tooltip="View"><i class="fa fa-eye"></i></a>
+								</td>
+							</tr>
+							
+							</tbody>
+						</table>
+
+					</div>
+					<!--</fieldset>-->
+
+				</uib-tab>
+				<uib-tab  heading="{{'Service Persons'}}" >
+					<div >
+						<button class="btn btn-primary pull-right" ng-click="routeToserviceperson()"><i class="icon-plus icon-white"></i>{{'Add Service Person'}}</button>
+						<br>
+
+						<table class="table" class="table table-condensed">
+							<thead>
+								<th>Role</th>
+								<th>Employee Id</th>
+								<th>Action</th>
+							</thead>
+							<tbody>
+							<tr >
+								<td>
+									HR
+								</td>
+								<td>
+									Raj
+								</td>
+								<td>
+									<a href="#/editserviceperson" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+								</td>
+							</tr>
+							<tr >
+								<td>
+									Fund Officer
+								</td>
+								<td>
+									Hariharan
+								</td>
+								<td>
+									<a href="#/editserviceperson" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+								</td>
+							</tr>
+							<!-- <tr>
+								<th >
+									{{'User Id'}}
+								</th>
+								<td>
+									{{'21'}}
+								</td>
+								<td>
+									<a href="#/editserviceperson" uib-tooltip="Edit"><i class="fa fa-edit"></i></a>
+								</td>
+							</tr> -->
+							</tbody>
+						</table>
+
+					</div>
+					<!--</fieldset>-->
+				</uib-tab>
 	
 
 

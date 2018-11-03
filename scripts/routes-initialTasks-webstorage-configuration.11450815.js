@@ -133,6 +133,9 @@
             .when('/editindividual', {
                 templateUrl: 'views/clients/editindividual.html'
             })
+            .when('/viewindividual', {
+                templateUrl: 'views/clients/viewindividual.html'
+            })
             .when('/addfunding', {
                 templateUrl: 'views/clients/addfunding.html'
             })
@@ -144,6 +147,9 @@
             })
             .when('/editcontact', {
                 templateUrl: 'views/clients/editcontact.html'
+            })
+            .when('/viewcontact', {
+                templateUrl: 'views/clients/viewcontact.html'
             })
             .when('/survey/:clientId', {
                 templateUrl: 'views/clients/survey.html'
@@ -216,6 +222,18 @@
             })
             .when('/viewloantrxn/:accountId/trxnId/:id', {
                 templateUrl: 'views/loans/view_loan_transaction.html'
+            })
+            .when('/bounce', {
+                templateUrl: 'views/loans/bounce/bounce.html'
+            })
+            .when('/addbounce', {
+                templateUrl: 'views/loans/bounce/addbounce.html'
+            })
+            .when('/editbounce', {
+                templateUrl: 'views/loans/bounce/editbounce.html'
+            })
+            .when('/viewbounce', {
+                templateUrl: 'views/loans/bounce/viewbounce.html'
             })
             .when('/organization', {
                 templateUrl: 'views/administration/organization.html'

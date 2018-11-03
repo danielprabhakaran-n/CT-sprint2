@@ -15644,6 +15644,32 @@
                 location.path("/searchtransaction/").search({loanId: scope.loandetails.id});
             };
 
+            scope.routeToindividual=function()
+            {
+                location.path('/addindividual');
+            }
+
+            scope.editindividual=function()
+            {
+                location.path('/editindividual');
+            }
+
+            scope.routeToBounce=function()
+            {
+                location.path('/addbounce');
+            }
+
+            scope.editcontact=function()
+            {
+                location.path('/editcontact');
+            }
+
+            scope.routeTocontact = function()
+            {
+                location.path('/addcontact');
+            }
+
+
             scope.viewLoanDetails = function () {
                 scope.report = false;
                 scope.hidePentahoReport = true;

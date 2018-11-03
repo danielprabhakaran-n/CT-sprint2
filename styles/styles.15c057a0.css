@@ -8120,6 +8120,10 @@ div.chosen-container.chosen-container-single {
 .graybg {
   background-color: #f0f0f0; }
 
+.rs-btn {
+  margin-right:5px;
+}
+
 .width170px {
   min-width: 170px !important;
   width: auto; }

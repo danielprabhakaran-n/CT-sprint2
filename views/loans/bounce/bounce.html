@@ -1,0 +1,136 @@
+<div class="content-container" ng-init="bounceFilter = false">
+        <ul class="breadcrumb">
+            <li class="active">Bounce</li>
+        </ul>
+        <api-validate></api-validate>
+    
+        <div class="card">
+            <div class="toolbar">
+                <h4>List of Bounce</h4>
+            </div>
+            <div class="content">
+                <br>
+    
+                <div class="row">
+                    <div class="col-sm-8">
+                        <form ng-submit="search()" class="form-horizontal">
+                            <div class="form-group">
+                                <div class="col-md-8">
+                                    <input ng-autofocus="true" ng-model="filterText" ng-keyup="onFilter()" type="text"
+                                           class="form-control unstyled"
+                                           placeholder="Filter by ...">
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary form-control">
+                                                <span class="fa fa-search"></span>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="" class="btn btn-primary rs-btn" uib-tooltip="Filter" ng-click="bounceFilter = !bounceFilter"><i
+                                            class="fa fa-filter"></i></a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#/addbounce" class="btn btn-primary pull-right"><i
+                                class="fa fa-plus"></i> Add Bounce</a> &nbsp;&nbsp;
+                        <!--<a href="#/bulkimportfldg" class="btn btn-primary pull-right" has-permission='CREATE_CLIENT'><i-->
+                                <!--+                            class="fa fa-upload"></i>&nbsp;Import Lenders</a>-->
+                    </div>
+                </div>
+                <hr/>
+    
+                <div ng-if="bounceFilter" uib-collapse="isCollapsed" class="blockoverlay">
+                    <!-- Name and Mobile No -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Bounce Date" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="EMI Date" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Class Transaction Date" class="form-control"/>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Charge Date" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Office and Status -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" placeholder=" Charge Name " class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+                    <span>
+                        <a class="btn btn-primary bottomspacing"><i class="icon-search icon-white"></i> {{'label.button.advancesearch'
+                                    | translate}}</a>
+                    </span>
+                    <span>
+                        <a ng-click="resetSearch()" class="btn btn-primary bottomspacing"> Reset</a>
+                    </span>
+                    <hr/>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Bounce Date</th>
+                        <th>EMI Date</th>
+                        <th>Class Transaction Date</th>
+                        <th>Charge Date</th>
+                        <th>Charge Name</th>
+                        <th>Charge Amount</th>
+                        <th>Reason</th>
+                    </tr>
+                    </thead>
+    
+                    <tbody>
+                        <tr >
+                            <td><a href="#/viewbounce">12 November 2018</a></td>
+                            <td><a href="#/viewbounce">14 November 2018</a></td>
+                            <td><a href="#/viewbounce">27 November 2018</a></td>
+                            <td><a href="#/viewbounce">29 November 2018</a></td>
+                            <td><a href="#/viewbounce">Rajan</a></td>
+                            <td><a href="#/viewbounce">50,00,000 </a></td>
+                            <td><a href="#/viewbounce">Overdue balance exist</a></td>
+                        </tr>
+                        <tr >
+                            <td><a href="#/viewbounce">18 November 2018</a></td>
+                            <td><a href="#/viewbounce">22 November 2018</a></td>
+                            <td><a href="#/viewbounce">09 December 2018</a></td>
+                            <td><a href="#/viewbounce">10 December 2018</a></td>
+                            <td><a href="#/viewbounce">Sundar</a></td>
+                            <td><a href="#/viewbounce">1,00,00,000 </a></td>
+                            <td><a href="#/viewbounce">Bank rejected</a></td>
+                        </tr>
+                    </tbody>
+    
+                </table>
+                <dir-pagination-controls align="center" boundary-links="true"
+                                         template-url="bower_components/angular-utils-pagination/dirPagination.tpl.html"
+                                         on-page-change="getResultsPage(newPageNumber)">
+                </dir-pagination-controls>
+    
+            </div>
+        </div>
+    
+    
+    </div>
+    
